@@ -1,0 +1,41 @@
+Initialize the project
+Express install
+
+Dynamic Routing
+1) Dynamic Routing
+Hum log kayi baar kuch routes dekhte hai unme sirf ek hi hissa change hota hai
+/author/harsh
+/author/harshita
+/author/harshika
+/author/harshitakabf
+
+/profile/harsh
+/profile/harshita
+
+Sabse pehle browser pe jao 
+URL likho apna jo tumko chaiye and enter dabaiye 
+ab us url route ko create kariye
+res bhejiye kuch bhhi
+ab usi url ko agar dynamic banana hai to realise karo konsa part dynamic hai aur uss part ke aage route mein colon laga do
+
+2) How to get data coming from frontend at backend route
+app.get('/profile/:username', function (req, res) {
+    res.send(`Welcome, ${req.params.username}`);
+});
+
+app.get('/profile/:username/:age', function (req, res) {
+    res.send(`Welcome, ${req.params.username} your age is ${req.params.age}`);
+});
+
+
+Setting up parsers for from
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+Setting up EJS for EJS pages
+    install ejs from npm
+    setup ejs as a middleware for view engine
+    app.set('view engine', 'ejs');
+
+Setting up public static file
+    app.use(express.static(path.join(__dirname, 'public'))); // Isme andar pura path aayega
