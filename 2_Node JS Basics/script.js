@@ -96,7 +96,7 @@ fs.rmdir("./copy", { recursive: true }, function (err) {
 const http = require('http');
 
 const server = http.createServer(function (req, res) {
-    res.end("Hello World!!")
+    res.end("Hello World")
 })
 
 server.listen(3000);
